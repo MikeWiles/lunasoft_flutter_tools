@@ -7,14 +7,14 @@ import 'package:flutter/widgets.dart';
 class MWRaisedButton extends StatelessWidget {
 
 Function? onPressed;
-required String text;
+String text;
 Color textColor = Colors.white;
 Color? color;
 IconData? iconData;
 EdgeInsets? margin;
 bool disabled = false;
 
-MWRaisedButton({this.onPressed, this.text, this.textColor = Colors.white, this.color, this.iconData, this.margin, this.disabled = false});
+MWRaisedButton({this.onPressed, required this.text, this.textColor = Colors.white, this.color, this.iconData, this.margin, this.disabled = false});
 
   @override
   Widget build(BuildContext context) {
