@@ -48,7 +48,10 @@ class _MWDateSelectorViewState extends State<MWDateSelector> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(label, style: ExternalFonts.subtitle1(Colors.black54)),
+          Text(label, style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400,
+              color: Colors.black54)),
           Container(
               margin: const EdgeInsets.only(top: 4),
               padding: const EdgeInsets.all(2),
