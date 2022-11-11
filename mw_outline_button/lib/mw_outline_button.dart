@@ -1,20 +1,27 @@
 library mw_raised_button;
 
-import 'package:acs_soft_pay_flutter/enums/viewState.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MWRaisedButton extends StatelessWidget {
+class MWOutlineButton extends StatelessWidget {
 
-Function? onPressed;
-String text;
-Color textColor = Colors.white;
-Color? color;
-IconData? iconData;
-EdgeInsets? margin;
-bool disabled = false;
+  Function? onPressed;
+  String? text;
+  Color? backgroundColor;
+  Color? color;
+  IconData? iconData;
+  bool isLoading = false;
+  EdgeInsets? margin;
+  MainAxisAlignment? mainAxisAlignment;
 
-MWRaisedButton({this.onPressed, required this.text, this.textColor = Colors.white, this.color, this.iconData, this.margin, this.disabled = false});
+MWOutlineButton({this.onPressed,
+  required this.text,
+  this.backgroundColor,
+  this.color,
+  this.iconData,
+  this.isLoading = false,
+  this.margin,
+  this.mainAxisAlignment});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +43,7 @@ MWRaisedButton({this.onPressed, required this.text, this.textColor = Colors.whit
                     ): Container(),
                     Padding(
                         padding: EdgeInsets.all(5),
-                        child: Text(text!, style:TextStyle(color: color, fontWeight: FontWeight.w600, fontSize: 14))
+                        child: Text(text!, style:TextStyle(color: color == null ? Theme.of(context).primaryColor : color, fontWeight: FontWeight.w600, fontSize: 14))
                     )
                   ]
               ) :
@@ -53,7 +60,7 @@ MWRaisedButton({this.onPressed, required this.text, this.textColor = Colors.whit
           color: Colors.transparent
       ),
       decoration: BoxDecoration(
-          border: Border.all(width:1, color: color),
+          border: Border.all(width:1, color: color == null ? Theme.of(context).primaryColor : color!),
           borderRadius: BorderRadius.circular(4),
           color: backgroundColor
       )
