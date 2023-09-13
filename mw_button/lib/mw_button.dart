@@ -12,8 +12,9 @@ Color? color;
 IconData? iconData;
 EdgeInsets? margin;
 bool disabled = false;
+int circularBorderRadius = 4;
 
-MWButton({this.onPressed, required this.text, this.textColor = Colors.white, this.color, this.iconData, this.margin, this.disabled = false});
+MWButton({this.onPressed, required this.text, this.textColor = Colors.white, this.color, this.iconData, this.margin, this.disabled = false, this.circularBorderRadius = 4});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ MWButton({this.onPressed, required this.text, this.textColor = Colors.white, thi
           color: Colors.transparent
       ),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(circularBorderRadius),
           color: disabled || color == null ? color!.withOpacity(0.8) : color
       )
     );
