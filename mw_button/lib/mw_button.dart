@@ -12,9 +12,9 @@ Color? color;
 IconData? iconData;
 EdgeInsets? margin;
 bool disabled = false;
-int circularBorderRadius = 4;
+double circularBorderRadius = 4.0;
 
-MWButton({this.onPressed, required this.text, this.textColor = Colors.white, this.color, this.iconData, this.margin, this.disabled = false, this.circularBorderRadius = 4});
+MWButton({this.onPressed, required this.text, this.textColor = Colors.white, this.color, this.iconData, this.margin, this.disabled = false, this.circularBorderRadius = 4.0});
 
   @override
   Widget build(BuildContext context) {
