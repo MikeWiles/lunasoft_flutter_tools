@@ -1,0 +1,114 @@
+{
+  "name": "mw_widgets_2",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/client/flutter/mw_widgets_2/src",
+  "projectType": "library",
+  "targets": {
+    "analyze": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter analyze",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter clean",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm dart format libs/client/flutter/mw_widgets_2/*",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter test",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      }
+    },
+    "doctor": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter doctor",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      }
+    },
+    "build-aar": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter build aar",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      },
+      "outputs": [
+        "{workspaceRoot}/libs/client/flutter/mw_widgets_2/build"
+      ]
+    },
+    "build-apk": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter build apk",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      },
+      "outputs": [
+        "{workspaceRoot}/libs/client/flutter/mw_widgets_2/build"
+      ]
+    },
+    "build-appbundle": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter build appbundle",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      },
+      "outputs": [
+        "{workspaceRoot}/libs/client/flutter/mw_widgets_2/build"
+      ]
+    },
+    "build-bundle": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter build bundle",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      },
+      "outputs": [
+        "{workspaceRoot}/libs/client/flutter/mw_widgets_2/build"
+      ]
+    },
+    "build-ios": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter build ios",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      },
+      "outputs": [
+        "{workspaceRoot}/libs/client/flutter/mw_widgets_2/build"
+      ]
+    },
+    "build-ios-framework": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter build ios-framework",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      },
+      "outputs": [
+        "{workspaceRoot}/libs/client/flutter/mw_widgets_2/build"
+      ]
+    },
+    "build-ipa": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "fvm flutter build ipa",
+        "cwd": "libs/client/flutter/mw_widgets_2"
+      },
+      "outputs": [
+        "{workspaceRoot}/libs/client/flutter/mw_widgets_2/build"
+      ]
+    }
+  },
+  "tags": []
+}
