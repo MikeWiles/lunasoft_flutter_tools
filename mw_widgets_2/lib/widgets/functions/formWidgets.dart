@@ -77,12 +77,14 @@ Widget getNoItems(IconData iconData, String text) {
   );
 }
 
-Widget getFieldFormFromMap({required BuildContext context, String? title, required Map<String, dynamic> map, bool showNull = false, Color? nameColour, Color? backgroundColor, Color? titleColor, Color? titleBackground, Color? outlineColor}) {
+Widget getFieldFormFromMap({required BuildContext context, String? title, required Map<String, dynamic> map, bool showNull = false, Color? nameColour, Color? backgroundColor, Color? titleColor, Color? titleBackground, Color? outlineColor, List<String>? includedKeys, List<String>? excludedKeys}) {
   List<Widget> items = [];
   map.forEach((key, value) {
-    items.add(
-        getFieldAttribute(context, formatFirstLetterCapital(key), value.toString(), showNull: showNull, nameColour: nameColour)
-    );
+    if ((includedKeys == null || includedKeys.contains(key)) || (excludedKeys == null || !excludedKeys.contains(key))) {
+      items.add(
+          getFieldAttribute(context, formatFirstLetterCapital(key), value.toString(), showNull: showNull, nameColour: nameColour)
+      );
+    }
   });
   return getFieldContainer(
     context,
@@ -98,10 +100,11 @@ Widget getFieldFormFromMap({required BuildContext context, String? title, requir
 List<Widget> getWidgetListFromMap({required BuildContext context, required Map<String, dynamic> map, bool showNull = false, List<String>? includedKeys, List<String>? excludedKeys}) {
   List<Widget> items = [];
   map.forEach((key, value) {
-    if ((includedKeys == null || includedKeys.contains(key)) || (excludedKeys == null || !excludedKeys.contains(key)))
+    if ((includedKeys == null || includedKeys.contains(key)) || (excludedKeys == null || !excludedKeys.contains(key))) {
       items.add(
           getFieldAttribute(context, formatFirstLetterCapital(formatSpaceAtCapital(key, convertToLowercase: true)), value.toString(), showNull: showNull)
       );
+    }
   });
   return items;
 }
