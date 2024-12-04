@@ -95,12 +95,13 @@ Widget getFieldFormFromMap({required BuildContext context, String? title, requir
   );
 }
 
-List<Widget> getWidgetListFromMap({required BuildContext context, required Map<String, dynamic> map, bool showNull = false}) {
+List<Widget> getWidgetListFromMap({required BuildContext context, required Map<String, dynamic> map, bool showNull = false, List<String>? includedKeys, List<String>? excludedKeys}) {
   List<Widget> items = [];
   map.forEach((key, value) {
-    items.add(
-        getFieldAttribute(context, formatFirstLetterCapital(formatSpaceAtCapital(key, convertToLowercase: true)), value.toString(), showNull: showNull)
-    );
+    if ((includedKeys == null || includedKeys.contains(key)) || (excludedKeys == null || !excludedKeys.contains(key)))
+      items.add(
+          getFieldAttribute(context, formatFirstLetterCapital(formatSpaceAtCapital(key, convertToLowercase: true)), value.toString(), showNull: showNull)
+      );
   });
   return items;
 }
